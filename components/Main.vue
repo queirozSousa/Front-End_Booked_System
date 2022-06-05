@@ -7,8 +7,7 @@
         <p class="text-3xl font-extrabold tracking-tight text-gray-900">Sistema de Pré-Marcação</p>
         <p class="mt-4 text-xl text-gray-500">Plataforma digial de Pré-marcação para o depósito e o atendimento.</p>
         <p class="mt-4 text-xl text-gray-500">A <span class="bg-blue-800 text-white p-px pl-2 mr-1 font-semibold rounded-sm"> Plataforma </span> fornece também a possibilidade actualização dos dados apartir de qualquer lugar.</p>
-
-          <a href="#" class=" md:mt-12 inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Marque Agora</a>
+           <nuxt-link :to="{name: 'book'}"   class=" md:mt-12 inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Marque Agora </nuxt-link>
       </div>
       <div>
         <div class="md:mt-32 justify-items-end" >

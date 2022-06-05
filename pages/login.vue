@@ -71,6 +71,7 @@ middleware: 'guest',
         Object.keys(e.response.data.errors).forEach((key) => {
           Object.values(e.response.data.errors[key]).forEach((error) => {
             this.form.errors.push(error);
+            this.$toast.danger('Falha na Autenticação, Desculpe tente denovo!')
           });
         });
       }
