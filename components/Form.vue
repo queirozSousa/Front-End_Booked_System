@@ -150,7 +150,6 @@
     </div>
   </div>
 </div>
-{{ perfil }}
 </main>
 
 
@@ -188,7 +187,6 @@ export default {
   methods:{
     async getIncidents() {
     let res = await this.$axios.get('/api/pais')
-    console.log(res.data)
     this.pais = res.data;
   },
       async getPerfil() {
@@ -197,7 +195,6 @@ export default {
   },
     async getNumber() {
     let res = await this.$axios.get(`/api/perfil/${this.$auth.user.id}/number`)
-    console.log(res.data)
     this.contar = res.data;
   },
       async submit() {
@@ -209,8 +206,6 @@ export default {
         this.form.processing = false;
         this.$router.push({ name: 'index' })
         this.$toast.success('Perfil Criado com Sucesso !!')
-
-
       } catch (e) {
         Object.keys(e.response.data.errors).forEach((key) => {
           Object.values(e.response.data.errors[key]).forEach((error) => {

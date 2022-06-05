@@ -2,7 +2,6 @@
 <Authenticated>
     <Body />
     <Form />
-    {{ count }}
 </Authenticated>
 </template>
 
@@ -31,7 +30,6 @@ middleware: 'authenticated',
   methods:{
     async getNumber() {
     let res = await this.$axios.get(`/api/perfil/${this.$auth.user.id}/number`)
-    console.log(res.data)
     this.count = res.data;
   },
   }
