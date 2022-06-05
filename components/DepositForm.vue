@@ -12,7 +12,7 @@
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Informação necessária para Pré-marcação</h3>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">Informação necessária para Deposito</h3>
         <p class="mt-1 text-sm text-gray-600"> Preencha o Formulário com os seus dados solicitados..</p>
       </div>
     </div>
@@ -32,8 +32,8 @@
               </div>
 
               <div class="col-span-6 sm:col-span-3 space-y-4">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">E-mail</label>
-                <input type="text" v-model="form.email" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Digite o seu E-mail" required>
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Valor</label>
+                <input type="text" v-model="form.amout" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Digite o valor" required>
               </div>
 
               <div class="col-span-6 sm:col-span-3 space-y-4">
@@ -51,7 +51,7 @@
 
               <div class="col-span-6 sm:col-span-3 space-y-4">
                 <label for="first-name" class="block text-sm font-medium text-gray-700">Número de Telemovel</label>
-                <input type="text" v-model="form.numero_telefone" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Numero de de Telemovel" required>
+                <input type="text" v-model="form.number_cell" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Numero de de Telemovel" required>
               </div>
 
               <div class="col-span-6 sm:col-span-3 space-y-4">
@@ -60,8 +60,13 @@
               </div>
 
               <div class="col-span-6 sm:col-span-3 space-y-4">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">Assunto</label>
-                <input type="text" v-model="form.assunto" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Digite o assunto" required>
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Nome do Beneficiário</label>
+                <input type="text" v-model="form.name_of_recipient" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nome do Beneficiário" required>
+              </div>
+
+              <div class="col-span-6 sm:col-span-3 space-y-4">
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Numero do Beneficiário</label>
+                <input type="text" v-model="form.number_of_recipient" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Numero do Beneficiário" required>
               </div>
             </div>
           </div>
@@ -78,7 +83,7 @@
 
 <script>
 export default {
-  name: "Form",
+  name: "Deposit",
    data(){
     return{
       selected: "",
@@ -86,12 +91,13 @@ export default {
       form: {
         name: "",
         date: "",
-        email: "",
+        amout: "",
         name_counter: "",
         b_i:"",
-        assunto:"",
+        number_cell:"",
         nuit:"",
-        numero_telefone: "",
+        name_of_recipient: "",
+        number_of_recipient: "",
         processing: false,
         errors: [],
       },
@@ -112,10 +118,10 @@ export default {
       this.form.errors = [];
       try {
         await this.$axios.get("/sanctum/csrf-cookie");
-        await this.$axios.post( `/api/atendimento/${this.$auth.user.id}`, this.form);
+        await this.$axios.post( `/api/deposito/${this.$auth.user.id}`, this.form);
         this.form.processing = false;
         this.$router.push({ name: 'index' })
-        this.$toast.success('Atendimento marcado com Sucesso !!')
+        this.$toast.success('Deposito marcado com Sucesso !!')
 
 
       } catch (e) {

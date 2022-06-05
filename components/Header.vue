@@ -43,7 +43,10 @@
 
             <nuxt-link :to="{name: 'marking'}" v-show="$auth.loggedIn" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Preencher Dados </nuxt-link>
 
-            <nuxt-link :to="{name: 'book'}" v-show="$auth.loggedIn" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Pré-marcação </nuxt-link>
+            <nuxt-link :to="{name: 'book'}" v-show="$auth.loggedIn" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Atendimento </nuxt-link>
+
+
+            <nuxt-link :to="{name: 'deposit'}"  exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Depósito bancário</nuxt-link>
 
             <nuxt-link :to="{name: 'my-data'}"  v-show="$auth.loggedIn"  exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Meus Dados </nuxt-link>
 

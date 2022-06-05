@@ -42,7 +42,11 @@
 
             <nuxt-link :to="{name: 'index'}" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Menu Principal </nuxt-link>
 
-            <nuxt-link :to="{name: 'marking'}" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Pré-Marcação </nuxt-link>
+            <nuxt-link :to="{name: 'marking'}" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Preencher Dados </nuxt-link>
+
+            <nuxt-link :to="{name: 'book'}"  exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Atendimento</nuxt-link>
+
+            <nuxt-link :to="{name: 'deposit'}"  exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Depósito bancário</nuxt-link>
 
             <nuxt-link :to="{name: 'my-data'}" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Meus Dados </nuxt-link>
 
@@ -62,6 +66,7 @@
       <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Menu Principal</a>
 
       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pré-Marcação</a>
+
 
       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Meus Dados</a>
 
