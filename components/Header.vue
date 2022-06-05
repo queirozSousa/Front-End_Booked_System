@@ -41,7 +41,7 @@
 
             <nuxt-link :to="{name: 'index'}" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Menu Principal </nuxt-link>
 
-            <nuxt-link :to="{name: 'marking'}" v-show="$auth.loggedIn" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Preencher Dados </nuxt-link>
+            <nuxt-link :to="{name: 'marking'}"  v-show="$auth.loggedIn " exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Preencher Dados </nuxt-link>
 
             <nuxt-link :to="{name: 'book'}" v-show="$auth.loggedIn" exact class=" text-white px-3 py-2 rounded-md text-sm font-medium">Atendimento </nuxt-link>
 

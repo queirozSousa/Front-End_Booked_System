@@ -24,7 +24,8 @@ middleware: 'authenticated',
 },
   data(){
     return{
-      pais: []
+      pais: [],
+      count: ''
     }
   },
 

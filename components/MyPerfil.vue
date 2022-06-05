@@ -57,12 +57,18 @@ export default {
     }
   },
     mounted() {
-    this.getIncidents()
+    this.getIncidents(),
+    this.getNumber()
   },
   methods:{
     async getIncidents() {
     let res = await this.$axios.get(`/api/perfil/${this.$auth.user.id}`)
     this.perfil = res.data;
+  },
+    async getNumber() {
+    let res = await this.$axios.get(`/api/perfil/${this.$auth.user.id}/number`)
+    console.log(res.data)
+    this.count = res.data;
   },
   }
 }
