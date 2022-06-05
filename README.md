@@ -16,8 +16,9 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+# Add this file in .env
+  
+  NUXT_PUBLIC_BACKEND_URL=http://localhost:8000
 
 ## Special Directories
 
